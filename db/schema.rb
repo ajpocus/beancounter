@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219073209) do
+ActiveRecord::Schema.define(:version => 20120219074207) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
@@ -21,11 +21,25 @@ ActiveRecord::Schema.define(:version => 20120219073209) do
     t.datetime "updated_at"
   end
 
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transaction_tags", :force => true do |t|
+    t.integer  "transaction_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "transactions", :force => true do |t|
     t.integer  "account_id"
     t.decimal  "amount",     :precision => 14, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
   end
 
   create_table "users", :force => true do |t|
