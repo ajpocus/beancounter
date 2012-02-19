@@ -11,12 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219065526) do
+ActiveRecord::Schema.define(:version => 20120219073209) do
 
   create_table "accounts", :force => true do |t|
     t.integer  "user_id"
     t.decimal  "balance",    :precision => 14, :scale => 2
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer  "account_id"
+    t.decimal  "amount",     :precision => 14, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
