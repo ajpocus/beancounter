@@ -2,9 +2,7 @@ Beancounter::Application.routes.draw do
   devise_for :users
 
   resources :accounts do
-    member do
-      resources :transactions
-    end
+    resources :transactions
   end
 
   root :to => 'accounts#index'

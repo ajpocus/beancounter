@@ -1,0 +1,4 @@
+<%= form_for(@transaction) do |f| %>
+  <%= render 'fields', :f => f %>
+  <%= f.submit "Create Transaction" %>
+<% end %>

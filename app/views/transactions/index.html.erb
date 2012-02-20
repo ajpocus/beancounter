@@ -1,0 +1,6 @@
+<%= link_to "Create Transaction", new_account_transaction_path(@account) %>
+<% if @transactions.any? %>
+  <%= render @transactions %>
+<% else %>
+  <p class="info">You don't have any transactions yet.</p>
+<% end %>
