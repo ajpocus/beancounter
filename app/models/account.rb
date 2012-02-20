@@ -1,6 +1,8 @@
 class Account < ActiveRecord::Base
   belongs_to :user
   has_many :transactions
+  has_many :expenses
+  has_many :incomes
   
   validates_presence_of :name
   validates_uniqueness_of :name
