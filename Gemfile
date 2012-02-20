@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 gem 'pg'
 gem 'devise'
 gem 'hpricot'
+gem 'acts-as-taggable-on', '~> 2.2.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
