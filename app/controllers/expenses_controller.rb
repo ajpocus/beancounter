@@ -12,6 +12,9 @@ class ExpensesController < ApplicationController
   
   def create
     @expense = @account.expenses.new(params[:expense])
+    @expense.tag_list = nil
+    current_user.tag(@expense, :with => params[:expense][:tag_list],
+      :on => :tags)
     if @expense.save
       redirect_to account_path(@account), :flash => {
         :success => "Expense created"

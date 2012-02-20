@@ -1,0 +1,7 @@
+<% if @tags.any? %>
+  <% @tags.each do |tag| %>
+    <span class="tag"><%= tag.name %></span>
+  <% end %>
+<% else %>
+  <p class="info">You don't have any tags yet.</p>
+<% end %>

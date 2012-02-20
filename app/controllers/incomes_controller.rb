@@ -12,6 +12,9 @@ class IncomesController < ApplicationController
 
   def create
     @income = @account.incomes.new(params[:income])
+    @income.tag_list = nil
+    current_user.tag(@income, :with => params[:income][:tag_list],
+      :on => :tags)
     if @income.save
       redirect_to account_path(@account), :flash => {
         :success => "Income created"

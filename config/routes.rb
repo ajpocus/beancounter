@@ -1,12 +1,13 @@
 Beancounter::Application.routes.draw do
   devise_for :users
 
+  resources :tags
   resources :accounts do
     resources :expenses
     resources :incomes
     resources :transactions
   end
-
+  
   root :to => 'accounts#index'
   
   # The priority is based upon order of creation:
