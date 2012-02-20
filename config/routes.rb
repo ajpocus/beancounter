@@ -1,7 +1,13 @@
 Beancounter::Application.routes.draw do
   devise_for :users
 
-  resources :tags
+  resources :tags do
+    member do
+      get 'total'
+      get 'frequency'
+    end
+  end
+  
   resources :accounts do
     resources :expenses
     resources :incomes

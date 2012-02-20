@@ -1,0 +1,5 @@
+<%= form_for(@income, :url => account_incomes_path(@account)) do |f| %>
+  <%= f.error_messages %>
+  <%= render 'transactions/fields', :f => f %>
+  <%= f.submit "Create Income" %>
+<% end %>

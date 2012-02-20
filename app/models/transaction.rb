@@ -8,6 +8,10 @@ class Transaction < ActiveRecord::Base
   before_save :add_balance
   before_destroy :subtract_balance
   
+  validates_presence_of :date
+  validates_presence_of :amount
+  validates_presence_of :tag_list
+  
   private
   
   def negate_expenses
