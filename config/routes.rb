@@ -4,6 +4,7 @@ Beancounter::Application.routes.draw do
   resources :accounts do
     resources :expenses
     resources :incomes
+    resources :transactions
   end
 
   root :to => 'accounts#index'

@@ -1,13 +1,16 @@
 class Transaction < ActiveRecord::Base
-  belongs_to :account
-  acts_as_taggable
-  
-  accepts_nested_attributes_for :tags
-  
+
+  before_save :negate_expenses
   before_save :add_balance
   before_destroy :subtract_balance
   
   private
+  
+  def negate_expenses
+    if self.is_a? Expense and self.amount > 0
+      self.amount *= -1
+    end
+  end
   
   def add_balance
     self.account.balance += self.amount
@@ -18,4 +21,9 @@ class Transaction < ActiveRecord::Base
     self.account.balance -= self.amount
     self.account.save
   end
+  
+  belongs_to :account
+  acts_as_taggable
+  
+  accepts_nested_attributes_for :tags
 end

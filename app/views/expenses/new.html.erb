@@ -1,0 +1,4 @@
+<%= form_for(@expense, :url => account_expenses_path(@account)) do |f| %>
+  <%= render 'transactions/fields', :f => f %>
+  <%= f.submit "Create Expense" %>
+<% end %>
