@@ -1,4 +1,6 @@
 class Transaction < ActiveRecord::Base
   belongs_to :account
-  has_many :tags, :through => :transaction_tag
+  acts_as_taggable
+  
+  accepts_nested_attributes_for :tags
 end

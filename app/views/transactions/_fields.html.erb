@@ -1,9 +1,14 @@
 <div class="field">
   <%= f.label :date %>
-  <%= f.select_date :date %>
+  <%= date_select :transaction, :date %>
 </div>
 
-<div class="amount">
+<div class="field">
   <%= f.label :amount %>
-  <%= f.number_field :amount %>
+  <%= f.text_field :amount %>
+</div>
+
+<div class="field">
+  <%= f.label :tag_list %>
+  <%= f.text_field :tag_list %>
 </div>
