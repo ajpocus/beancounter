@@ -8,9 +8,9 @@ class Transaction < ActiveRecord::Base
   before_save :add_balance
   before_destroy :subtract_balance
   
-  validates_presence_of :date
+#  validates_presence_of :date
   validates_presence_of :amount
-  validates_presence_of :tag_list
+#  validates_presence_of :tag_list
   
   private
   
@@ -32,3 +32,16 @@ class Transaction < ActiveRecord::Base
     self.account.save
   end
 end
+
+# == Schema Information
+#
+# Table name: transactions
+#
+#  id         :integer         not null, primary key
+#  account_id :integer
+#  amount     :decimal(14, 2)
+#  created_at :datetime
+#  updated_at :datetime
+#  date       :date
+#
+

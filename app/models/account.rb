@@ -17,3 +17,16 @@ class Account < ActiveRecord::Base
     self.balance ||= 0.0
   end
 end
+
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  balance    :decimal(14, 2)
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
