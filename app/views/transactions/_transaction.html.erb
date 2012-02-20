@@ -1,0 +1,9 @@
+<div class="transaction">
+  <span class="date"><%= transaction.date %></span>
+  <span class="amount"><%= transaction.amount %></span>
+  <div class="tags">
+    <% transaction.tags.each do |tag| %>
+      <span class="tag"><%= tag %></span>
+    <% end %>
+  </div>
+</div>

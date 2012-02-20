@@ -1,4 +1,11 @@
 <div class="account">
   <span class="name"><%= account.name %></span>
   <span class="balance"><%= number_to_currency account.balance %></span>
+  
+  <%= link_to "Create Transaction", new_account_transaction_path(account) %>
+  <% if account.transactions.any? %>
+    <%= render account.transactions %>
+  <% else %>
+    <p class="info">This account doesn't have any transactions yet.</p>
+  <% end %>
 </div>
