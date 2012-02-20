@@ -2,7 +2,8 @@
   <span class="name"><%= account.name %></span>
   <span class="balance"><%= number_to_currency account.balance %></span>
   
-  <%= link_to "Create Transaction", new_account_transaction_path(account) %>
+  <%= link_to "Add Income", new_account_income_path(account) %>
+  <%= link_to "Add Expense", new_account_expense_path(account) %>
   <% if account.transactions.any? %>
     <%= render account.transactions %>
   <% else %>

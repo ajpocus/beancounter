@@ -2,7 +2,8 @@ Beancounter::Application.routes.draw do
   devise_for :users
 
   resources :accounts do
-    resources :transactions
+    resources :expenses
+    resources :incomes
   end
 
   root :to => 'accounts#index'
