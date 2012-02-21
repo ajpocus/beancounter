@@ -6,14 +6,10 @@ class StatementsController < ApplicationController
   end
   
   def create
-    @statement = @account.statements.new(params[:statement])
-    if @statement.save
-      redirect_to account_path(@account), :flash => {
-        :success => "Statement uploaded."
-      }
-    else
-      render 'new'
-    end
+    StatementParser.parse(params[:statement][:file].tempfile)
+    redirect_to account_path(@account), :flash => {
+      :success => "Statement uploaded."
+    }
   end
   
   private

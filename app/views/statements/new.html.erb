@@ -1,6 +1,7 @@
 <%= form_for(@statement, :url => account_statements_path(@account)) do |f| %>
   <%= f.label :file %>
   <%= f.file_field :file %>
+  <%= f.hidden_field :file_cache %>
   <br />
   <%= f.submit "Upload Statement" %>
 <% end %>

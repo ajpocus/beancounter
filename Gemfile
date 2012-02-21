@@ -13,7 +13,6 @@ gem 'dynamic_form'
 gem 'annotate',
   :git => 'git://github.com/jeremyolliver/annotate_models.git',
   :branch => 'rake_compatibility'
-gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
