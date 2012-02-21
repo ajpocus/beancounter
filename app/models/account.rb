@@ -3,6 +3,7 @@ class Account < ActiveRecord::Base
   has_many :transactions, :dependent => :destroy
   has_many :expenses, :dependent => :destroy
   has_many :incomes, :dependent => :destroy
+  has_many :statements, :dependent => :destroy
   
   validates_presence_of :name
   validates_uniqueness_of :name
